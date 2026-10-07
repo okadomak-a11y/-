@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Решение алгоритмической задачи №1003</title>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+    <a class="brand" href="../index.html" target="_self">Dr Pepper</a>
+    <p class="tagline">История, вкус и немного учебного HTML</p>
+    <nav class="main-nav" aria-label="Основная навигация">
+        <a href="../index.html" target="_self"><img src="../table/images-2.jpeg" width="30" height="30" alt="Главная страница Dr Pepper"></a>&nbsp;|&nbsp;
+        <a href="../index.html" target="_self">Главная</a>&nbsp;|&nbsp;
+        <a href="about.html">История</a>&nbsp;|&nbsp;
+        <a href="products.html">Вкусы и таблица</a>&nbsp;|&nbsp;
+        <a href="forms.html">Формы</a>&nbsp;|&nbsp;
+        <a href="../паспорт/index.html">Задания 13–14</a>&nbsp;|&nbsp;
+        <strong class="active" aria-current="page">Задача №1003</strong>&nbsp;|&nbsp;
+        <a href="products.html#gallery">Альбом</a>&nbsp;|&nbsp;
+        <a href="https://www.drpepper.com/" target="_blank" rel="noopener">Официальный сайт</a>
+    </nav>
+</div></header>
+<main>
+    <h1>Решение алгоритмической задачи №1003</h1>
+    <p>Можно ли из бревна с диаметром поперечного сечения <var>D</var> выпилить квадратный брус шириной <var>A</var>?</p>
+    <p>Квадрат помещается в круг, если его диагональ не больше диаметра бревна: <var>A</var>√2 ≤ <var>D</var>.</p>
+
+    <form id="log-form" action="https://www.bing.com/search" method="get" target="_blank">
+        <label for="diameter">Диаметр бревна D</label>
+        <input id="diameter" name="D" type="number" min="0" step="any" value="10" required>
+        <label for="width">Ширина квадратного бруса A</label>
+        <input id="width" name="A" type="number" min="0" step="any" value="7" required>
+        <input type="hidden" name="q" value="">
+        <button id="verify" type="button">Проверить</button>
+        <button id="send" type="button">Отправить запрос в Bing</button>
+    </form>
+    <p id="result" role="status" aria-live="polite">Для D = 10 и A = 7 брус выпилить можно.</p>
+    <p><a href="products.html#table">Вернуться к таблице вкусов</a></p>
+</main>
+<footer class="site-footer">Учебный проект о Dr Pepper</footer>
+<script>
+    const logForm = document.getElementById('log-form');
+    const result = document.getElementById('result');
+    let check = false;
+
+    function verify() {
+        const diameter = Number(logForm.elements.D.value);
+        const width = Number(logForm.elements.A.value);
+
+        if (!Number.isFinite(diameter) || !Number.isFinite(width) || diameter <= 0 || width <= 0) {
+            check = false;
+            result.textContent = 'Введите положительные значения D и A.';
+            return false;
+        }
+
+        check = Math.SQRT2 * width <= diameter;
+        result.textContent = check
+            ? `Можно выпилить квадратный брус: A√2 = ${(Math.SQRT2 * width).toFixed(2)} ≤ D = ${diameter}.`
+            : `Нельзя выпилить квадратный брус: A√2 = ${(Math.SQRT2 * width).toFixed(2)} > D = ${diameter}.`;
+        logForm.elements.q.value = `D = ${diameter}, A = ${width}; можно ли выпилить квадратный брус?`;
+        return check;
+    }
+
+    function send() {
+        if (verify()) {
+            logForm.submit();
+        } else {
+            window.alert('Квадратный брус не помещается. Исправьте значения и проверьте снова.');
+        }
+    }
+
+    document.getElementById('verify').addEventListener('click', verify);
+    document.getElementById('send').addEventListener('click', send);
+</script>
+</body>
+</html>

@@ -9,23 +9,26 @@
 <header class="site-header"><div class="header-inner">
     <a class="brand" href="../index.html" target="_self">Dr Pepper</a>
     <p class="tagline">История, вкус и немного учебного HTML</p>
+    <!-- Общее меню сайта. -->
     <nav class="main-nav" aria-label="Основная навигация">
-        <a href="../index.html" target="_self"><img src="../table/images-2.jpeg" width="30" height="30" alt="Главная страница Dr Pepper"></a>
-        <a href="../index.html" target="_self">Главная</a>
-        <a href="about.html">История</a>
-        <a href="products.html">Вкусы и таблица</a>
-        <a href="forms.html">Формы</a>
-        <a href="../паспорт/index.html">Задания 13–14</a>
-        <strong class="active" aria-current="page">Задача №1003</strong>
-        <a href="products.html#gallery">Альбом</a>
+        <a href="../index.html" target="_self"><img src="../table/images-2.jpeg" width="30" height="30" alt="Главная страница Dr Pepper"></a>&nbsp;|&nbsp;
+        <a href="../index.html" target="_self">Главная</a>&nbsp;|&nbsp;
+        <a href="about.html">История</a>&nbsp;|&nbsp;
+        <a href="products.html">Вкусы и таблица</a>&nbsp;|&nbsp;
+        <a href="forms.html">Формы</a>&nbsp;|&nbsp;
+        <a href="../паспорт/index.html">Задания 13–14</a>&nbsp;|&nbsp;
+        <strong class="active" aria-current="page">Задача №1003</strong>&nbsp;|&nbsp;
+        <a href="products.html#gallery">Альбом</a>&nbsp;|&nbsp;
         <a href="https://www.drpepper.com/" target="_blank" rel="noopener">Официальный сайт</a>
     </nav>
 </div></header>
 <main>
     <h1>Решение алгоритмической задачи №1003</h1>
+    <!-- Квадрат помещается в круг, если диагональ A√2 не больше D. -->
     <p>Можно ли из бревна с диаметром поперечного сечения <var>D</var> выпилить квадратный брус шириной <var>A</var>?</p>
     <p>Квадрат помещается в круг, если его диагональ не больше диаметра бревна: <var>A</var>√2 ≤ <var>D</var>.</p>
 
+    <!-- Кнопки проверяют размеры и отправляют допустимый запрос в Bing. -->
     <form id="log-form" action="https://www.bing.com/search" method="get" target="_blank">
         <label for="diameter">Диаметр бревна D</label>
         <input id="diameter" name="D" type="number" min="0" step="any" value="10" required>
@@ -40,11 +43,13 @@
 </main>
 <footer class="site-footer">Учебный проект о Dr Pepper</footer>
 <script>
+    // Находим форму и место, где показывается результат проверки.
     const logForm = document.getElementById('log-form');
     const result = document.getElementById('result');
     let check = false;
 
     function verify() {
+        // Читаем D и A и проверяем, помещается ли квадрат в сечение бревна.
         const diameter = Number(logForm.elements.D.value);
         const width = Number(logForm.elements.A.value);
 
@@ -63,6 +68,7 @@
     }
 
     function send() {
+        // В Bing отправляем запрос только после успешной проверки.
         if (verify()) {
             logForm.submit();
         } else {

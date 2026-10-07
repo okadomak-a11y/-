@@ -1,3 +1,4 @@
+// Эта функция переводит значения паспорта на латиницу и считает возраст.
 function findEdit() {
 	// Изменяем данные на латиницу
 	document.getElementById('surname').innerText = 'BAGIROV';
@@ -9,7 +10,7 @@ function findEdit() {
 	document.getElementById('issuedBy').innerText = 'Issued By';
 	document.getElementById('registrationAddress').innerText = 'City';
 
-	// Вычисляем и отображаем возраст
+	// Вычисляем возраст по году рождения и показываем его на странице.
 	const birthYearNode = document.getElementById('birthyear');
 	let birthYear = parseInt(birthYearNode.innerText);
 	let currentYear = new Date().getFullYear();
@@ -19,9 +20,11 @@ function findEdit() {
 	ageNode.innerText = age;
 }
 
+// При нажатии кнопки выполняется перевод данных.
 const nodeForClick = document.getElementById('for_click');
 nodeForClick.addEventListener('click', findEdit);
 
+// Заменяем подпись под паспортом после нажатия той же кнопки.
 function find_edit() {
 	const new_node = document.getElementById('new');
 	new_node.innerHTML = '<b>данные изменены!</b>';

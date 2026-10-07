@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Формы Dr Pepper</title>
 </head>
-<body>
+<body id="start">
 <header class="site-header"><div class="header-inner">
     <a class="brand" href="../index.html" target="_self">Dr Pepper</a><p class="tagline">История, вкус и немного учебного HTML</p>
-    <nav class="main-nav" aria-label="Основная навигация"><a href="../index.html" target="_self"><img src="../table/images-2.jpeg" width="30" height="30" alt="Главная страница Dr Pepper"></a><a href="../index.html" target="_self">Главная</a><a href="about.html">История</a><a href="products.html">Вкусы и таблица</a><strong class="active" aria-current="page">Формы</strong><a href="../паспорт/index.html">Задания 13–14</a><a href="algorithm.html">Задача №1003</a><a href="products.html#gallery">Альбом</a><a href="https://www.drpepper.com/" target="_blank" rel="noopener">Официальный сайт</a></nav>
+    <nav class="main-nav" aria-label="Основная навигация"><a href="../index.html" target="_self"><img src="../table/images-2.jpeg" width="30" height="30" alt="Главная страница Dr Pepper"></a>&nbsp;|&nbsp;<a href="../index.html" target="_self">Главная</a>&nbsp;|&nbsp;<a href="about.html">История</a>&nbsp;|&nbsp;<a href="products.html">Вкусы и таблица</a>&nbsp;|&nbsp;<strong class="active" aria-current="page">Формы</strong>&nbsp;|&nbsp;<a href="../паспорт/index.html">Задания 13–14</a>&nbsp;|&nbsp;<a href="algorithm.html">Задача №1003</a>&nbsp;|&nbsp;<a href="products.html#gallery">Альбом</a>&nbsp;|&nbsp;<a href="https://www.drpepper.com/" target="_blank" rel="noopener">Официальный сайт</a></nav>
 </div></header>
 <main>
     <h1>Связаться и сделать заказ</h1>
-    <nav class="page-nav"><a href="#contact">Контакты</a><a href="#order">Заказ</a><a href="#start">К началу</a></nav>
+    <nav class="page-nav"><a href="#contact">Контакты</a>&nbsp;|&nbsp;<a href="#order">Заказ</a>&nbsp;|&nbsp;<a href="#start">К началу</a></nav>
     <section id="contact"><h2>Контактные данные</h2>
         <form action="https://httpbin.org/post" method="post">
             <label>Фамилия <input type="text" name="surname" value="Багиров" required></label>
@@ -36,7 +36,26 @@
             <button type="submit">Отправить заказ</button>
         </form>
     </section>
-    <p id="start"><a href="#start">К началу страницы</a></p>
+    <section id="order-details">
+        <h2>Как оформить заказ</h2>
+        <p>Форма заказа передает выбранные параметры напитка. Перед отправкой укажите количество упаковок и подходящий вариант.</p>
+        <ol>
+            <li>Укажите имя и количество упаковок.</li>
+            <li>Выберите вкус Dr Pepper и дату доставки.</li>
+            <li>Проверьте данные и нажмите «Отправить заказ».</li>
+        </ol>
+        <h3>Варианты напитка</h3>
+        <ul>
+            <li><b>Classic</b> — оригинальный насыщенный вкус.</li>
+            <li><b>Zero Sugar</b> — вариант без сахара.</li>
+            <li><b>Cherry</b> — вкус с вишневой нотой.</li>
+        </ul>
+        <figure>
+            <img src="../classic1.jpg" width="180" alt="Классическая упаковка Dr Pepper">
+            <figcaption>Классический вариант Dr Pepper.</figcaption>
+        </figure>
+    </section>
+    <p align="right"><a href="#start">К началу страницы</a></p>
 </main>
 <footer class="site-footer">Учебный проект о Dr Pepper</footer>
 </body>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изменяем кириллицу на латиницу по клику</title>
+</head>
+<body>
+    <header class="site-header"><div class="header-inner">
+        <a class="brand" href="../index.html" target="_self">Dr Pepper</a>
+        <div class="tagline">Задание 14: изменение данных по клику</div>
+        <!-- Общее меню сайта. -->
+        <nav class="main-nav" aria-label="Основная навигация">
+            <a href="../index.html" target="_self"><img src="../table/images-2.jpeg" width="30" height="30" alt="Главная страница Dr Pepper"></a>&nbsp;|&nbsp;
+            <a href="../index.html" target="_self">Главная</a>&nbsp;|&nbsp;<a href="../pages/about.html">История</a>&nbsp;|&nbsp;
+            <a href="../pages/products.html">Вкусы и таблица</a>&nbsp;|&nbsp;<a href="../pages/forms.html">Формы</a>&nbsp;|&nbsp;
+            <strong class="active" aria-current="page">Задания 13–14</strong>&nbsp;|&nbsp;
+            <a href="../pages/algorithm.html">Задача №1003</a>&nbsp;|&nbsp;
+            <a href="../pages/products.html#gallery">Альбом</a>&nbsp;|&nbsp;
+            <a href="https://www.drpepper.com/" target="_blank" rel="noopener">Официальный сайт</a>
+        </nav>
+    </div></header>
+    <main>
+    <h1>Изменяем кириллицу на латиницу по клику</h1>
+    <!-- Исходные значения паспорта, которые меняет кнопка ниже. -->
+    <h2>Паспорт РФ — страница 2</h2>
+    <p>Учебный макет страниц 2 и 3 паспорта.</p>
+    <p>Нажмите кнопку ниже, чтобы заменить кириллицу латиницей.</p>
+    <p>Фамилия: <span id="surname">БАГИРОВ</span></p>
+    <p>Имя: <span id="name">ЭЛЬНУР</span></p>
+    <p>Отчество: <span id="patronymic">АКРАМ ОГЛЫ</span></p>
+    <p>Пол: <span id="sex">МУЖ.</span></p>
+    <p>Дата рождения: <span id="birthdate">27.04.2007</span></p>
+    <p>Год рождения: <span id="birthyear">2007</span> Возраст: <span id="age"></span></p>
+    <p>Место рождения: <span id="birthplace">Город</span></p>
+    <p>Серия и номер: <span id="serianumber">Серия</span></p>
+    <p>Дата выдачи: <span id="issueDate">Дата</span></p>
+    <p>Кем выдан: <span id="issuedBy">Выдан</span></p>
+    <p>Код подразделения: <span id="departmentCode">630-011</span></p>
+
+    <!-- Поля второй страницы паспорта тоже обновляются по нажатию. -->
+    <h2>Паспорт РФ — страница 3</h2>
+    <p>Адрес регистрации: <span id="registrationAddress">Город</span></p>
+    <p>Дата регистрации: <span id="registrationDate">Дата</span></p>
+    <p id="new">Оригинальный фрагмент</p>
+
+    <button id="for_click" type="button">Изменить данные на латиницу и рассчитать возраст</button>
+
+    <p>Для проверки откройте консоль разработчика (F12) и выполните:</p>
+    <pre>
+    document.getElementsByTagName('p')[2].childNodes[1].innerText // Фамилия
+    document.getElementsByTagName('p')[3].childNodes[1].innerText // Имя
+    document.getElementsByTagName('p')[7].childNodes[1].innerText // Год рождения
+    </pre>
+
+    <p><a href="../index.html">Вернуться на главную страницу</a></p>
+
+    </main>
+    <footer class="site-footer">Учебный проект о Dr Pepper</footer>
+    <script src="passport.js"></script>
+</body>
+</html>
