@@ -17,7 +17,8 @@
     <nav class="page-nav"><a href="#contact">Контакты</a>&nbsp;|&nbsp;<a href="#order">Заказ</a>&nbsp;|&nbsp;<a href="#start">К началу</a></nav>
     <!-- Первая форма отправляет контактные данные на сервер. -->
     <section id="contact"><h2>Контактные данные</h2>
-        <form action="https://httpbin.org/post" method="post">
+        <form id="contact-form" action="https://www.bing.com/search" method="get" target="_blank">
+            <input type="hidden" name="q" value="">
             <label>Фамилия <input type="text" name="surname" value="Багиров" required></label>
             <label>Имя <input type="text" name="name" value="Эльнур" required></label>
             <label>Группа <input type="text" name="group" value="Г06У28" required></label>
@@ -29,8 +30,9 @@
     </section>
     <!-- Вторая форма отправляет параметры заказа Dr Pepper. -->
     <section id="order"><h2>Заказ Dr Pepper</h2>
-        <form action="https://httpbin.org/post" method="post">
+        <form id="order-form" action="https://www.bing.com/search" method="get" target="_blank">
             <input type="hidden" name="form_type" value="dr_pepper_order">
+            <input type="hidden" name="q" value="">
             <label>Ваше имя <input type="text" name="customer_name" value="Эльнур" required></label>
             <label>Количество упаковок <input type="number" name="boxes" value="1" min="1" max="20" required></label>
             <fieldset><legend>Вариант напитка</legend><label><input type="radio" name="flavor" value="classic" checked> Classic</label><label><input type="radio" name="flavor" value="zero"> Zero Sugar</label><label><input type="radio" name="flavor" value="cherry"> Cherry</label></fieldset>
@@ -62,5 +64,47 @@
     <p align="right"><a href="#start">К началу страницы</a></p>
 </main>
 <footer class="site-footer">Учебный проект о Dr Pepper</footer>
+<script>
+    const contactForm = document.getElementById('contact-form');
+    const orderForm = document.getElementById('order-form');
+
+    function openBingSearch(form, query) {
+        form.elements.q.value = query;
+        const searchUrl = new URL(form.action);
+        searchUrl.searchParams.set('q', query);
+        window.open(searchUrl.href, '_blank', 'noopener');
+    }
+
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const fields = new FormData(contactForm);
+        const query = [
+            'Контактные данные',
+            `фамилия: ${fields.get('surname')}`,
+            `имя: ${fields.get('name')}`,
+            `группа: ${fields.get('group')}`,
+            `телефон: ${fields.get('phone')}`,
+            `электронная почта: ${fields.get('email')}`,
+            `дата отправки: ${fields.get('send_date')}`
+        ].join(', ');
+        openBingSearch(contactForm, query);
+    });
+
+    orderForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const fields = new FormData(orderForm);
+        const deliveryDate = fields.get('delivery_date') || 'не указана';
+        const subscription = fields.has('subscribe') ? 'да' : 'нет';
+        const query = [
+            'Заказ Dr Pepper',
+            `имя: ${fields.get('customer_name')}`,
+            `упаковок: ${fields.get('boxes')}`,
+            `вкус: ${fields.get('flavor')}`,
+            `дата доставки: ${deliveryDate}`,
+            `новости: ${subscription}`
+        ].join(', ');
+        openBingSearch(orderForm, query);
+    });
+</script>
 </body>
 </html>
