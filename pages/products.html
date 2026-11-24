@@ -1,64 +1,75 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вкусы Dr Pepper</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вкусы Dr Pepper</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
 </head>
-<body>
-<header class="site-header"><div class="header-inner">
-    <a class="brand" href="../index.html" target="_self">Dr Pepper</a><p class="tagline">История, вкус и немного учебного HTML</p>
-    <!-- Общее меню сайта; активный пункт обозначает текущую страницу. -->
-    <nav class="main-nav" aria-label="Основная навигация"><a href="../index.html" target="_self"><img src="../images-2.jpeg" width="30" height="30" alt="Главная страница Dr Pepper"></a>&nbsp;|&nbsp;<a href="../index.html" target="_self">Главная</a>&nbsp;|&nbsp;<a href="about.html">История</a>&nbsp;|&nbsp;<strong class="active" aria-current="page">Вкусы и таблица</strong>&nbsp;|&nbsp;<a href="forms.html">Формы</a>&nbsp;|&nbsp;<a href="../паспорт/index.html">Задания 13–14</a>&nbsp;|&nbsp;<a href="algorithm.html">Задача №1003</a>&nbsp;|&nbsp;<a href="#gallery">Альбом</a>&nbsp;|&nbsp;<a href="https://www.drpepper.com/" target="_blank" rel="noopener">Официальный сайт</a></nav>
-</div></header>
-<main id="top">
-    <h1>Вкусы и форматы</h1>
-    <!-- Закладки прокручивают страницу к напитку, таблице и альбому. -->
-    <nav class="page-nav bookmark-nav" aria-label="Закладки страницы" align="right">
-        <a href="#brand">О напитке</a>&nbsp;|&nbsp;
-        <a href="#flavors">Варианты</a>&nbsp;|&nbsp;
-        <a href="#gallery">Альбом</a>
+<body id="top">
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg container py-3" aria-label="Основная навигация">
+      <a class="navbar-brand fs-3" href="../index.html">Dr Pepper</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="main-menu"><div class="navbar-nav ms-auto gap-lg-1">
+        <a class="nav-link" href="../index.html">Главная</a>
+        <a class="nav-link" href="about.html">История</a>
+        <a class="nav-link active" aria-current="page" href="products.html">Вкусы</a>
+        <a class="nav-link" href="forms.html">Заказ</a>
+        <a class="nav-link" href="student.html">Студент и программа</a>
+      </div></div>
     </nav>
-    <section id="brand">
-        <h3>О напитке</h3>
-        <p>Dr Pepper — газированный напиток с узнаваемым сочетанием фруктовых и пряных нот.</p>
-        <p><a href="about.html#history">Читать историю Dr Pepper</a></p>
-        <p class="back-to-top" align="right"><a href="#top">К началу страницы</a></p>
+  </header>
+  <main class="container main-content">
+    <p class="eyebrow">Линейка Dr Pepper</p>
+    <h1 class="display-4 fw-bold">Вкусы и форматы</h1>
+    <nav class="page-nav" aria-label="Навигация по странице">
+      <a href="#intro">О напитке</a><a href="#flavors">Варианты</a><a href="#gallery">Альбом</a><a href="#">К началу</a>
+    </nav>
+
+    <section class="content-card p-4 p-lg-5 mb-5" id="intro">
+      <h2 class="section-heading">Оригинальный вкус, разные впечатления</h2>
+      <p>Dr Pepper — газированный напиток с узнаваемым сочетанием фруктовых и пряных нот. Некоторые варианты, например Cherry и Zero Sugar, уже представлены на фотографиях проекта.</p>
+      <p class="mb-0"><a href="about.html#history">Читать историю Dr Pepper</a></p>
     </section>
-    <section id="flavors">
-        <h3>Популярные варианты</h3>
-        <!-- Таблица: background задает фон, а bgcolor окрашивает ячейки. -->
-        <table border="1" bordercolor="#9f1731" cellpadding="8" cellspacing="4" width="100%" background="../images-2.jpeg">
-            <caption>Характеристики популярных вариантов Dr Pepper</caption>
-            <thead>
-                <tr><th scope="col" bgcolor="#e8bd70">Вариант</th><th scope="col" bgcolor="#e8bd70">Описание</th><th scope="col" bgcolor="#e8bd70">Изображение</th><th scope="col" bgcolor="#e8bd70">Подробнее</th></tr>
-            </thead>
-            <tbody>
-                <tr><td bgcolor="#fff8ed">Classic</td><td bgcolor="#fff8ed">Оригинальный насыщенный вкус</td><td bgcolor="#fff8ed"><img src="../classic1.jpg" width="90" alt="Классическая банка Dr Pepper"></td><td bgcolor="#fff8ed"><a href="about.html#history">История</a></td></tr>
-                <tr><td bgcolor="#fff8ed">Zero Sugar</td><td bgcolor="#fff8ed">Версия без обычного сахара</td><td bgcolor="#fff8ed"><img src="../zerosugar.jpeg" width="90" alt="Банка Dr Pepper Zero Sugar"></td><td bgcolor="#fff8ed"><a href="forms.html#order">Заказать</a></td></tr>
-                <tr><td bgcolor="#fff8ed">Cherry</td><td bgcolor="#fff8ed">Вариант с вишнёвой нотой</td><td bgcolor="#fff8ed"><img src="../cherry.jpg" width="90" alt="Банка Dr Pepper Cherry"></td><td bgcolor="#fff8ed"><a href="https://www.drpepper.com/" target="_blank" rel="noopener">Сайт бренда</a></td></tr>
-            </tbody>
+
+    <section class="mb-5" id="flavors">
+      <p class="eyebrow">Подборка</p>
+      <h2 class="section-heading">Популярные варианты</h2>
+      <!-- Карточки строятся скриптом из отдельного списка данных в products-data.js. -->
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4" id="flavor-list"></div>
+    </section>
+
+    <section class="mb-5" aria-labelledby="comparison-title">
+      <h2 class="section-heading" id="comparison-title">Коротко о выборе</h2>
+      <div class="table-wrap">
+        <table class="table table-hover align-middle">
+          <caption class="caption-top px-3">Сравнение вариантов из этой подборки</caption>
+          <thead><tr><th scope="col">Вариант</th><th scope="col">Особенность</th><th scope="col">Подойдёт, если</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Original</th><td>Фирменное сочетание вкусов</td><td>Хочется попробовать классику</td></tr>
+            <tr><th scope="row">Cherry</th><td>Вишнёвая нота</td><td>Нравятся ягодные вкусы</td></tr>
+            <tr><th scope="row">Zero Sugar</th><td>Версия без сахара</td><td>Ищете альтернативный формат</td></tr>
+          </tbody>
         </table>
-        <p class="back-to-top" align="right"><a href="#top">К началу страницы</a></p>
+      </div>
     </section>
+
     <section id="gallery">
-        <h3>Альбом Dr Pepper</h3>
-        <!-- Миниатюры открывают большие изображения в новых вкладках. -->
-        <div class="album-gallery">
-            <figure><a href="../classic1.jpg" target="_blank" rel="noopener"><img class="album-thumb" src="../classic1.jpg" width="50" height="50" alt="Открыть Classic Dr Pepper"></a><figcaption>Classic Dr Pepper</figcaption></figure>
-            <figure><a href="../vanilla.jpg" target="_blank" rel="noopener"><img class="album-thumb" src="../vanilla.jpg" width="50" height="50" alt="Открыть Dr Pepper Vanilla Float"></a><figcaption>Vanilla Float</figcaption></figure>
-            <figure><a href="../zerosugar.jpeg" target="_blank" rel="noopener"><img class="album-thumb" src="../zerosugar.jpeg" width="50" height="50" alt="Открыть Dr Pepper Zero Sugar"></a><figcaption>Zero Sugar</figcaption></figure>
-            <figure><a href="../cherry.jpg" target="_blank" rel="noopener"><img class="album-thumb" src="../cherry.jpg" width="50" height="50" alt="Открыть Dr Pepper Cherry"></a><figcaption>Cherry</figcaption></figure>
-            <figure><a href="../images-2.jpeg" target="_blank" rel="noopener"><img class="album-thumb" src="../images-2.jpeg" width="50" height="50" alt="Открыть Dr Pepper"></a><figcaption>Dr Pepper</figcaption></figure>
-        </div>
-        <div class="graphic-links" aria-label="Графические ссылки">
-            <a href="#gallery" target="_self"><img src="../images-2.jpeg" width="10" height="10" alt="К альбому на этой странице"></a>
-            <a href="../images-2.jpeg" target="_blank" rel="noopener"><img src="../images-2.jpeg" width="10" height="10" alt="Открыть оригинальное изображение в новой вкладке"></a>
-            <a href="zoomed-image.html" target="_blank" rel="noopener"><img src="../images-2.jpeg" width="10" height="10" alt="Открыть увеличенное изображение"></a>
-        </div>
-        <p class="back-to-top" align="right"><a href="#top">К началу страницы</a></p>
+      <h2 class="section-heading">Альбом</h2>
+      <div class="row row-cols-2 row-cols-md-4 g-3">
+        <figure class="col mb-0"><a href="../classic1.jpg" target="_blank" rel="noopener"><img class="product-image rounded-3" src="../classic1.jpg" alt="Открыть фотографию Classic Dr Pepper"></a><figcaption class="small mt-2">Classic</figcaption></figure>
+        <figure class="col mb-0"><a href="../cherry.jpg" target="_blank" rel="noopener"><img class="product-image rounded-3" src="../cherry.jpg" alt="Открыть фотографию Dr Pepper Cherry"></a><figcaption class="small mt-2">Cherry</figcaption></figure>
+        <figure class="col mb-0"><a href="../vanilla.jpg" target="_blank" rel="noopener"><img class="product-image rounded-3" src="../vanilla.jpg" alt="Открыть фотографию Dr Pepper Vanilla Float"></a><figcaption class="small mt-2">Vanilla Float</figcaption></figure>
+        <figure class="col mb-0"><a href="../zerosugar.jpeg" target="_blank" rel="noopener"><img class="product-image rounded-3" src="../zerosugar.jpeg" alt="Открыть фотографию Dr Pepper Zero Sugar"></a><figcaption class="small mt-2">Zero Sugar</figcaption></figure>
+      </div>
+      <p class="mt-4"><a href="#top">К началу страницы ↑</a></p>
     </section>
-</main>
-<footer class="site-footer">Учебный проект о Dr Pepper</footer>
+  </main>
+  <footer class="site-footer py-4"><div class="container d-flex justify-content-between"><span>Учебный проект о Dr Pepper</span><a href="#top">К началу ↑</a></div></footer>
+  <!-- Сначала загружается Bootstrap, затем данные карточек. -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="products-data.js"></script>
 </body>
 </html>

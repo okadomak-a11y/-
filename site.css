@@ -1,0 +1,272 @@
+/* Bootstrap задаёт сетку и компоненты; файл дополняет их стилем проекта. */
+/* Палитра проекта: цвета напитка используются в кнопках, ссылках и акцентах. */
+:root {
+  --pepper: #7d1831;
+  --pepper-dark: #4a1021;
+  --cream: #fffaf3;
+  --ink: #271d20;
+  --muted: #71676a;
+  --gold: #e8bd70;
+}
+
+/* Общие настройки всех страниц и базовое поведение якорных переходов. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Основные стили страницы. Bootstrap отвечает за сетку, этот файл — за тему. */
+body {
+  min-width: 320px;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--pepper);
+}
+
+a:hover {
+  color: var(--pepper-dark);
+}
+
+/* Единая шапка и подсветка активной страницы в главном меню. */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #eadfe2;
+}
+
+.site-header .navbar-brand {
+  color: var(--pepper-dark);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.site-header .nav-link {
+  border-radius: 999px;
+  color: var(--ink);
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link.active {
+  background: #f7e9ed;
+  color: var(--pepper-dark);
+}
+
+.site-header .nav-link.active {
+  font-weight: 700;
+}
+
+.main-content {
+  min-height: 65vh;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.hero {
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: linear-gradient(125deg, var(--pepper-dark), var(--pepper));
+  color: #fff;
+}
+
+.hero-copy {
+  padding: clamp(2rem, 6vw, 5rem);
+}
+
+.hero h1 {
+  max-width: 13ch;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.hero p {
+  max-width: 54ch;
+  color: #f8e9ed;
+  font-size: 1.1rem;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+}
+
+.eyebrow {
+  color: var(--pepper);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.page-nav a {
+  padding: 0.45rem 0.8rem;
+  border: 1px solid #eadfe2;
+  border-radius: 999px;
+  background: #fff;
+  text-decoration: none;
+}
+
+/* Широкие карточки и текстовые секции сайта. */
+.content-card,
+.product-card,
+.person-card {
+  height: 100%;
+  border: 1px solid #eee3e5;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.5rem 1.75rem rgb(74 16 33 / 5%);
+}
+
+.product-card {
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  background: #f6e8eb;
+}
+
+.product-placeholder,
+.portrait-placeholder {
+  display: grid;
+  min-height: 210px;
+  place-items: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f8e6e9, #f4d8c3);
+  color: var(--pepper-dark);
+  text-align: center;
+}
+
+.portrait-placeholder {
+  min-height: 240px;
+  border-radius: 0.85rem;
+  font-weight: 700;
+}
+
+.person-photo {
+  display: block;
+  width: 100%;
+  height: 280px;
+  border-radius: 0.85rem;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.person-card .person-photo {
+  height: 240px;
+}
+
+.portrait-placeholder span {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+/* Обёртка таблицы сохраняет аккуратный вид на узких экранах. */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid #eadfe2;
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.table {
+  min-width: 620px;
+  margin: 0;
+}
+
+.table thead th {
+  background: #f7e9ed;
+  color: var(--pepper-dark);
+}
+
+/* Поля и кнопка формы заказа. */
+.form-panel {
+  border: 1px solid #eadfe2;
+  border-radius: 1rem;
+  background: #fff;
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--pepper);
+  box-shadow: 0 0 0 0.2rem rgb(125 24 49 / 15%);
+}
+
+.btn-pepper {
+  border-color: var(--pepper);
+  background: var(--pepper);
+  color: #fff;
+}
+
+.btn-pepper:hover {
+  border-color: var(--pepper-dark);
+  background: var(--pepper-dark);
+  color: #fff;
+}
+
+/* Подвал общий для всех страниц сайта. */
+.site-footer {
+  background: var(--pepper-dark);
+  color: #f8e9ed;
+}
+
+.site-footer a {
+  color: #fff;
+}
+
+.site-footer a:hover {
+  color: var(--gold);
+}
+
+/* На телефонах уменьшаем отступы и высоту обложки, чтобы контент помещался. */
+@media (max-width: 575.98px) {
+  .main-content {
+    padding-top: 1.25rem;
+  }
+
+  .hero {
+    border-radius: 1rem;
+  }
+
+  .hero-image {
+    min-height: 220px;
+    max-height: 300px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
