@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../site.css">
 </head>
 <body id="top">
+<!-- Навигация оставляет учебный пример частью общего сайта. -->
 <header class="site-header sticky-top">
     <nav class="navbar navbar-expand-lg container py-3" aria-label="Основная навигация">
         <a class="navbar-brand fs-3" href="../index.html">Dr Pepper</a>
@@ -27,7 +28,7 @@
     <p>Можно ли из бревна с диаметром поперечного сечения <var>D</var> выпилить квадратный брус шириной <var>A</var>?</p>
     <p>Квадрат помещается в круг, если его диагональ не больше диаметра бревна: <var>A</var>√2 ≤ <var>D</var>.</p>
 
-    <!-- Кнопки проверяют размеры и отправляют допустимый запрос в Bing. -->
+    <!-- Вводимые D и A проверяются скриптом; корректный результат можно передать в Bing. -->
     <form id="log-form" action="https://www.bing.com/search" method="get" target="_blank">
         <label for="diameter">Диаметр бревна D</label>
         <input id="diameter" name="D" type="number" min="0" step="any" value="10" required>
@@ -48,7 +49,7 @@
     let check = false;
 
     function verify() {
-        // Читаем D и A и проверяем, помещается ли квадрат в сечение бревна.
+        // Берём значения из полей формы и приводим их к числам для расчёта.
         const diameter = Number(logForm.elements.D.value);
         const width = Number(logForm.elements.A.value);
 
@@ -58,6 +59,7 @@
             return false;
         }
 
+        // Диагональ квадрата равна A√2; она должна быть не больше диаметра D.
         check = Math.SQRT2 * width <= diameter;
         result.textContent = check
             ? `Можно выпилить квадратный брус: A√2 = ${(Math.SQRT2 * width).toFixed(2)} ≤ D = ${diameter}.`

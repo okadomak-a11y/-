@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../site.css">
 </head>
 <body id="top">
+  <!-- Шапка сайта общая для страниц; active обозначает раздел с данными автора. -->
   <header class="site-header sticky-top">
     <nav class="navbar navbar-expand-lg container py-3" aria-label="Основная навигация">
       <a class="navbar-brand fs-3" href="../index.html">Dr Pepper</a>
@@ -24,11 +25,12 @@
   <main class="container main-content">
     <p class="eyebrow">Об авторе проекта</p>
     <h1 class="display-4 fw-bold">Студент и программа</h1>
-    <!-- Быстрые закладки на основные разделы страницы студента. -->
+    <!-- Якорная навигация быстро перемещает к сведениям об авторе и программе. -->
     <nav class="page-nav" aria-label="Навигация по странице">
       <a href="#student">Студент</a><a href="#program">Программа</a><a href="#team">Команда программы</a><a href="#">К началу</a>
     </nav>
 
+    <!-- Фото и карточка с данными автора располагаются рядом на широком экране. -->
     <section class="row g-4 align-items-stretch mb-5" id="student">
       <div class="col-md-4">
         <img class="person-photo" src="../эльнурио.jpg" alt="Эльнур Багиров">
@@ -39,6 +41,7 @@
           <h2 class="section-heading">Багиров Эльнур</h2>
           <p><strong>Группа:</strong> Б25ДЗ24</p>
           <p><strong>Электронная почта:</strong> <a href="mailto:elakbagirov@edu.hse.ru">elakbagirov@edu.hse.ru</a></p>
+          <!-- Здесь размещены страницы выполненных работ и ссылки на их требования. -->
           <h3 class="h5 mt-4">Контрольные работы</h3>
           <ul class="mb-0">
             <li>
@@ -54,6 +57,7 @@
       </div>
     </section>
 
+    <!-- Описание образовательной программы и ссылка на сайт Школы дизайна. -->
     <section class="content-card p-4 p-lg-5 mb-5" id="program">
       <p class="eyebrow">НИУ ВШЭ · Факультет креативных индустрий</p>
       <h2 class="section-heading">Образовательная программа «Дизайн»</h2>
@@ -62,8 +66,9 @@
       <a class="btn btn-pepper" href="https://design.hse.ru/ba/program/design" target="_blank" rel="noopener">Сайт программы «Дизайн»</a>
     </section>
 
+    <!-- Карточки сотрудников содержат роль, фотографию и ссылку на профиль ВШЭ. -->
     <section id="team">
-      <p class="eyebrow">Контакты</p>
+      <p class="eyebrow">Участники образовательной программы</p>
       <h2 class="section-heading">Команда программы</h2>
       <div class="row row-cols-1 row-cols-md-2 g-4">
         <article class="col">
@@ -71,7 +76,6 @@
             <img class="person-photo mb-4" src="../кузнецова.jpg" alt="Александра Владимировна Кузнецова">
             <h3 class="h4">Александра Владимировна Кузнецова</h3>
             <p class="mb-2"><strong>Роль:</strong> руководитель программы</p>
-            <p class="mb-2"><strong>Электронная почта:</strong> на странице профиля не указана в предоставленных данных.</p>
             <a href="https://www.hse.ru/staff/kuznetsova/" target="_blank" rel="noopener">Страница сотрудника на сайте ВШЭ</a>
           </div>
         </article>
@@ -80,7 +84,6 @@
             <img class="person-photo mb-4" src="../бамба.jpg" alt="Бамба Владимировна Матвиенко">
             <h3 class="h4">Бамба Владимировна Матвиенко</h3>
             <p class="mb-2"><strong>Роль:</strong> менеджер программы</p>
-            <p class="mb-2"><strong>Электронная почта:</strong> на странице профиля не указана в предоставленных данных.</p>
             <a href="https://www.hse.ru/org/persons/14279095" target="_blank" rel="noopener">Страница сотрудника на сайте ВШЭ</a>
           </div>
         </article>

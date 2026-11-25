@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../site.css">
 </head>
 <body id="top">
+    <!-- Навигация связывает демонстрационную страницу паспорта с сайтом. -->
     <header class="site-header sticky-top">
         <nav class="navbar navbar-expand-lg container py-3" aria-label="Основная навигация">
             <a class="navbar-brand fs-3" href="../index.html">Dr Pepper</a>
@@ -45,6 +46,7 @@
     <p>Дата регистрации: <span id="registrationDate">Дата</span></p>
     <p id="new">Оригинальный фрагмент</p>
 
+    <!-- Скрипт passport.js меняет текстовые поля после нажатия этой кнопки. -->
     <button id="for_click" type="button">Изменить данные на латиницу и рассчитать возраст</button>
 
     <p>Для проверки откройте консоль разработчика (F12) и выполните:</p>
@@ -58,6 +60,7 @@
 
     </main>
     <footer class="site-footer py-4"><div class="container d-flex justify-content-between"><span>Учебный проект о Dr Pepper</span><a href="#top">К началу ↑</a></div></footer>
+    <!-- Сначала загружается скрипт упражнения, затем библиотека мобильного меню. -->
     <script src="passport.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

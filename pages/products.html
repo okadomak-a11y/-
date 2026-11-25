@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../site.css">
 </head>
 <body id="top">
+  <!-- Общая навигация помогает перейти к другим страницам проекта. -->
   <header class="site-header sticky-top">
     <nav class="navbar navbar-expand-lg container py-3" aria-label="Основная навигация">
       <a class="navbar-brand fs-3" href="../index.html">Dr Pepper</a>
@@ -24,16 +25,19 @@
   <main class="container main-content">
     <p class="eyebrow">Линейка Dr Pepper</p>
     <h1 class="display-4 fw-bold">Вкусы и форматы</h1>
+    <!-- Якоря ведут к описанию, карточкам вкусов и фотогалерее. -->
     <nav class="page-nav" aria-label="Навигация по странице">
       <a href="#intro">О напитке</a><a href="#flavors">Варианты</a><a href="#gallery">Альбом</a><a href="#">К началу</a>
     </nav>
 
+    <!-- Краткое введение объясняет, что представлено в каталоге. -->
     <section class="content-card p-4 p-lg-5 mb-5" id="intro">
       <h2 class="section-heading">Оригинальный вкус, разные впечатления</h2>
       <p>Dr Pepper — газированный напиток с узнаваемым сочетанием фруктовых и пряных нот. Некоторые варианты, например Cherry и Zero Sugar, уже представлены на фотографиях проекта.</p>
       <p class="mb-0"><a href="about.html#history">Читать историю Dr Pepper</a></p>
     </section>
 
+    <!-- JavaScript заполняет этот пустой контейнер карточками из products-data.js. -->
     <section class="mb-5" id="flavors">
       <p class="eyebrow">Подборка</p>
       <h2 class="section-heading">Популярные варианты</h2>
@@ -41,6 +45,7 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4" id="flavor-list"></div>
     </section>
 
+    <!-- Таблица сравнивает варианты по особенностям и предпочтениям. -->
     <section class="mb-5" aria-labelledby="comparison-title">
       <h2 class="section-heading" id="comparison-title">Коротко о выборе</h2>
       <div class="table-wrap">
@@ -56,6 +61,7 @@
       </div>
     </section>
 
+    <!-- Ссылки на фото открывают исходные файлы в отдельной вкладке. -->
     <section id="gallery">
       <h2 class="section-heading">Альбом</h2>
       <div class="row row-cols-2 row-cols-md-4 g-3">

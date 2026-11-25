@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../site.css">
 </head>
 <body id="top">
+  <!-- Шапка и навигация имеют такой же вид, как на остальных страницах. -->
   <header class="site-header sticky-top">
     <nav class="navbar navbar-expand-lg container py-3" aria-label="Основная навигация">
       <a class="navbar-brand fs-3" href="../index.html">Dr Pepper</a>
@@ -25,10 +26,12 @@
   <main class="container main-content">
     <p class="eyebrow">Ваша очередь выбирать</p>
     <h1 class="display-4 fw-bold">Форма заказа</h1>
+    <!-- Переходы к форме и её описанию; пустой якорь возвращает к верху страницы. -->
     <nav class="page-nav" aria-label="Навигация по странице">
       <a href="#order">Заказ</a><a href="#how-it-works">Как это работает</a><a href="#">К началу</a>
     </nav>
 
+    <!-- Учебная форма отправляет GET-запрос в Bing и открывает результат в новой вкладке. -->
     <section class="form-panel" id="order">
       <h2 class="section-heading">Соберите заказ</h2>
       <p class="alert alert-warning" role="note">При отправке данные формы попадут в поисковый запрос Bing и будут показаны в новой вкладке. Не вводите личные или конфиденциальные данные.</p>
@@ -46,7 +49,7 @@
             <label class="form-label" for="quantity">Количество упаковок</label>
             <input class="form-control" id="quantity" name="package_count" type="number" value="1" min="1" max="20" required>
           </div>
-          <!-- У всех radio одинаковый name, поэтому выбирается ровно один вкус. -->
+          <!-- Общий name у радиокнопок позволяет отправить только один выбранный вкус. -->
           <fieldset class="col-12">
             <legend class="fs-6 fw-semibold">Выберите вкус</legend>
             <div class="d-flex flex-wrap gap-3">
@@ -62,12 +65,14 @@
             <textarea class="form-control" id="comment" name="order_comment" rows="3">Без комментария</textarea>
           </div>
           <div class="col-12">
+            <!-- Отправка откроет Bing в новой вкладке с собранными данными заказа. -->
             <button class="btn btn-pepper btn-lg" type="submit">Показать отправленный заказ в Bing</button>
           </div>
         </div>
       </form>
     </section>
 
+    <!-- Пояснение предупреждает, что это демонстрация, а не оформление покупки. -->
     <section class="content-card p-4 mt-4" id="how-it-works">
       <h2 class="h4">Что произойдёт при отправке</h2>
       <p class="mb-0">Поля формы будут собраны в текстовый поисковый запрос и отправлены в Bing. Новая вкладка покажет этот запрос; форма служит только учебной демонстрацией и не оформляет реальную покупку.</p>
@@ -82,6 +87,7 @@
 
     // Перед отправкой превращаем выбранный код вкуса в понятное название.
     orderForm.addEventListener("submit", () => {
+      // FormData читает текущие значения полей, включая выбранную радиокнопку.
       const fields = new FormData(orderForm);
       const flavorNames = {
         original: "Original",
@@ -90,7 +96,7 @@
         "zero-sugar": "Zero Sugar"
       };
 
-      // Bing покажет этот запрос в новой вкладке, а остальные поля тоже уйдут по своим name.
+      // Собираем читаемое описание заказа в параметр q, который использует поиск Bing.
       orderForm.elements.q.value = [
         "Заказ Dr Pepper",
         `имя: ${fields.get("customer_name")}`,
