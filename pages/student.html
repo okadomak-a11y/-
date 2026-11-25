@@ -25,8 +25,6 @@
   <main class="container main-content">
     <p class="eyebrow">Об авторе проекта</p>
     <h1 class="display-4 fw-bold">Студент и программа</h1>
-    <!-- Если JSON не загрузится, скрипт покажет здесь понятную ошибку. -->
-    <p class="alert alert-danger d-none" id="student-data-error" role="alert"></p>
     <!-- Якорная навигация быстро перемещает к сведениям об авторе и программе. -->
     <nav class="page-nav" aria-label="Навигация по странице">
       <a href="#student">Студент</a><a href="#program">Программа</a><a href="#team">Команда программы</a><a href="#">К началу</a>
@@ -50,19 +48,20 @@
       </div>
     </section>
 
-    <!-- Описание программы и ссылка тоже загружаются из data/program.json. -->
+    <!-- Данные этого блока JavaScript загружает из файла data/program.json. -->
     <section class="content-card p-4 p-lg-5 mb-5" id="program">
       <p class="eyebrow" id="program-faculty"></p>
-      <h2 class="section-heading" id="program-title"></h2>
-      <div id="program-description"></div>
-      <a class="btn btn-pepper" id="program-link" target="_blank" rel="noopener"></a>
+      <h2 class="section-heading" id="program-title">Я и моя образовательная программа</h2>
+      <p id="program-description"></p>
+      <h3 class="h5">О программе</h3>
+      <p><span id="program-details"></span><span id="programUrl"></span></p>
     </section>
 
-    <!-- Карточки команды создаются скриптом на основе массива people из JSON-файла. -->
+    <!-- Карточки участников создаются скриптом из массива people в JSON-файле. -->
     <section id="team">
       <p class="eyebrow">Участники образовательной программы</p>
       <h2 class="section-heading">Команда программы</h2>
-      <div class="row row-cols-1 row-cols-md-2 g-4" id="program-team"></div>
+      <div class="row row-cols-1 row-cols-md-2 g-4" id="people-list"></div>
     </section>
     <p class="mt-4"><a href="#top">К началу страницы ↑</a></p>
   </main>
