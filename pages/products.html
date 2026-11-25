@@ -37,11 +37,11 @@
       <p class="mb-0"><a href="about.html#history">Читать историю Dr Pepper</a></p>
     </section>
 
-    <!-- JavaScript заполняет этот пустой контейнер карточками из products-data.js. -->
+    <!-- Карточки вкусов загружаются скриптом из data/products.json. -->
     <section class="mb-5" id="flavors">
       <p class="eyebrow">Подборка</p>
       <h2 class="section-heading">Популярные варианты</h2>
-      <!-- Карточки строятся скриптом из отдельного списка данных в products-data.js. -->
+      <!-- Скрипт вставит сюда карточки, созданные из записей JSON-файла. -->
       <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4" id="flavor-list"></div>
     </section>
 
@@ -52,11 +52,8 @@
         <table class="table table-hover align-middle">
           <caption class="caption-top px-3">Сравнение вариантов из этой подборки</caption>
           <thead><tr><th scope="col">Вариант</th><th scope="col">Особенность</th><th scope="col">Подойдёт, если</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">Original</th><td>Фирменное сочетание вкусов</td><td>Хочется попробовать классику</td></tr>
-            <tr><th scope="row">Cherry</th><td>Вишнёвая нота</td><td>Нравятся ягодные вкусы</td></tr>
-            <tr><th scope="row">Zero Sugar</th><td>Версия без сахара</td><td>Ищете альтернативный формат</td></tr>
-          </tbody>
+          <!-- Строки сравнения будут построены из того же JSON, что и карточки. -->
+          <tbody id="flavor-comparison"></tbody>
         </table>
       </div>
     </section>
@@ -64,18 +61,14 @@
     <!-- Ссылки на фото открывают исходные файлы в отдельной вкладке. -->
     <section id="gallery">
       <h2 class="section-heading">Альбом</h2>
-      <div class="row row-cols-2 row-cols-md-4 g-3">
-        <figure class="col mb-0"><a href="../classic1.jpg" target="_blank" rel="noopener"><img class="product-image rounded-3" src="../classic1.jpg" alt="Открыть фотографию Classic Dr Pepper"></a><figcaption class="small mt-2">Classic</figcaption></figure>
-        <figure class="col mb-0"><a href="../cherry.jpg" target="_blank" rel="noopener"><img class="product-image rounded-3" src="../cherry.jpg" alt="Открыть фотографию Dr Pepper Cherry"></a><figcaption class="small mt-2">Cherry</figcaption></figure>
-        <figure class="col mb-0"><a href="../vanilla.jpg" target="_blank" rel="noopener"><img class="product-image rounded-3" src="../vanilla.jpg" alt="Открыть фотографию Dr Pepper Vanilla Float"></a><figcaption class="small mt-2">Vanilla Float</figcaption></figure>
-        <figure class="col mb-0"><a href="../zerosugar.jpeg" target="_blank" rel="noopener"><img class="product-image rounded-3" src="../zerosugar.jpeg" alt="Открыть фотографию Dr Pepper Zero Sugar"></a><figcaption class="small mt-2">Zero Sugar</figcaption></figure>
-      </div>
+      <!-- Фото и подписи альбома также берутся из JSON-файла. -->
+      <div class="row row-cols-2 row-cols-md-4 g-3" id="flavor-gallery"></div>
       <p class="mt-4"><a href="#top">К началу страницы ↑</a></p>
     </section>
   </main>
   <footer class="site-footer py-4"><div class="container d-flex justify-content-between"><span>Учебный проект о Dr Pepper</span><a href="#top">К началу ↑</a></div></footer>
-  <!-- Сначала загружается Bootstrap, затем данные карточек. -->
+  <!-- Bootstrap подключает мобильное меню; products.js загружает и выводит каталог. -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="products-data.js"></script>
+  <script src="products.js"></script>
 </body>
 </html>
