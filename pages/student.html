@@ -25,73 +25,50 @@
   <main class="container main-content">
     <p class="eyebrow">Об авторе проекта</p>
     <h1 class="display-4 fw-bold">Студент и программа</h1>
+    <!-- Если JSON не загрузится, скрипт покажет здесь понятную ошибку. -->
+    <p class="alert alert-danger d-none" id="student-data-error" role="alert"></p>
     <!-- Якорная навигация быстро перемещает к сведениям об авторе и программе. -->
     <nav class="page-nav" aria-label="Навигация по странице">
       <a href="#student">Студент</a><a href="#program">Программа</a><a href="#team">Команда программы</a><a href="#">К началу</a>
     </nav>
 
-    <!-- Фото и карточка с данными автора располагаются рядом на широком экране. -->
+    <!-- Разметка задаёт места для данных; значения и карточки подставит student.js из отдельного файла. -->
     <section class="row g-4 align-items-stretch mb-5" id="student">
       <div class="col-md-4">
-        <img class="person-photo" src="../эльнурио.jpg" alt="Эльнур Багиров">
+        <img class="person-photo" id="student-photo" alt="">
       </div>
       <div class="col-md-8">
         <article class="content-card p-4 p-lg-5">
           <p class="eyebrow">Автор учебного проекта</p>
-          <h2 class="section-heading">Багиров Эльнур</h2>
-          <p><strong>Группа:</strong> Б25ДЗ24</p>
-          <p><strong>Электронная почта:</strong> <a href="mailto:elakbagirov@edu.hse.ru">elakbagirov@edu.hse.ru</a></p>
+          <h2 class="section-heading" id="student-name"></h2>
+          <p><strong>Группа:</strong> <span id="student-group"></span></p>
+          <p><strong>Электронная почта:</strong> <a id="student-email"></a></p>
           <!-- Здесь размещены страницы выполненных работ и ссылки на их требования. -->
           <h3 class="h5 mt-4">Контрольные работы</h3>
-          <ul class="mb-0">
-            <li>
-              <a href="https://okadomak-a11y.github.io/-1-/index.html" target="_blank" rel="noopener">Контрольная работа 1</a>
-              · <a href="https://github.com/vmarshirov/g06u28/tree/main/task_01" target="_blank" rel="noopener">требования к работе</a>
-            </li>
-            <li>
-              <a href="https://okadomak-a11y.github.io/-/" target="_blank" rel="noopener">Контрольная работа 2</a>
-              · <a href="https://github.com/vmarshirov/g06u28/blob/main/task_02/ReadMe.md" target="_blank" rel="noopener">требования к работе</a>
-            </li>
-          </ul>
+          <ul class="mb-0" id="student-works"></ul>
         </article>
       </div>
     </section>
 
-    <!-- Описание образовательной программы и ссылка на сайт Школы дизайна. -->
+    <!-- Описание программы и ссылка тоже загружаются из data/program.json. -->
     <section class="content-card p-4 p-lg-5 mb-5" id="program">
-      <p class="eyebrow">НИУ ВШЭ · Факультет креативных индустрий</p>
-      <h2 class="section-heading">Образовательная программа «Дизайн»</h2>
-      <p>Многопрофильная программа Школы дизайна готовит специалистов в разных направлениях современного дизайна. В обучении сочетаются фундаментальные знания, практические навыки и проектная работа под кураторством практикующих дизайнеров.</p>
-      <p>Среди профилей программы — анимация и визуальные эффекты, гейм-дизайн, дизайн среды и интерьера, дизайн цифрового продукта, коммуникационный и медиадизайн, предметный дизайн и иллюстрация.</p>
-      <a class="btn btn-pepper" href="https://design.hse.ru/ba/program/design" target="_blank" rel="noopener">Сайт программы «Дизайн»</a>
+      <p class="eyebrow" id="program-faculty"></p>
+      <h2 class="section-heading" id="program-title"></h2>
+      <div id="program-description"></div>
+      <a class="btn btn-pepper" id="program-link" target="_blank" rel="noopener"></a>
     </section>
 
-    <!-- Карточки сотрудников содержат роль, фотографию и ссылку на профиль ВШЭ. -->
+    <!-- Карточки команды создаются скриптом на основе массива people из JSON-файла. -->
     <section id="team">
       <p class="eyebrow">Участники образовательной программы</p>
       <h2 class="section-heading">Команда программы</h2>
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <article class="col">
-          <div class="person-card p-4">
-            <img class="person-photo mb-4" src="../кузнецова.jpg" alt="Александра Владимировна Кузнецова">
-            <h3 class="h4">Александра Владимировна Кузнецова</h3>
-            <p class="mb-2"><strong>Роль:</strong> руководитель программы</p>
-            <a href="https://www.hse.ru/staff/kuznetsova/" target="_blank" rel="noopener">Страница сотрудника на сайте ВШЭ</a>
-          </div>
-        </article>
-        <article class="col">
-          <div class="person-card p-4">
-            <img class="person-photo mb-4" src="../бамба.jpg" alt="Бамба Владимировна Матвиенко">
-            <h3 class="h4">Бамба Владимировна Матвиенко</h3>
-            <p class="mb-2"><strong>Роль:</strong> менеджер программы</p>
-            <a href="https://www.hse.ru/org/persons/14279095" target="_blank" rel="noopener">Страница сотрудника на сайте ВШЭ</a>
-          </div>
-        </article>
-      </div>
+      <div class="row row-cols-1 row-cols-md-2 g-4" id="program-team"></div>
     </section>
     <p class="mt-4"><a href="#top">К началу страницы ↑</a></p>
   </main>
   <footer class="site-footer py-4"><div class="container d-flex justify-content-between"><span>Учебный проект о Dr Pepper</span><a href="#top">К началу ↑</a></div></footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Скрипт загружает JSON-файл и выводит содержащиеся в нём данные. -->
+  <script src="student.js"></script>
 </body>
 </html>
